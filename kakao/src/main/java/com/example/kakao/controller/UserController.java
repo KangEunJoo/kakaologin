@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.kakao.model.User;
 import com.example.kakao.model.oauth.OauthToken;
@@ -12,6 +13,7 @@ import com.example.kakao.service.UserService;
 
 @RestController 
 @RequestMapping("/api")
+@CrossOrigin(origins="http://localhost:3000",allowCredentials = "true")
 public class UserController {
 	@Autowired
     private UserService userService; //(2)
